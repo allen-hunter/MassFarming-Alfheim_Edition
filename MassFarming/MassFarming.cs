@@ -18,6 +18,7 @@ namespace MassFarming
 
         public void Awake()
         {
+            Debug.Log("MassFarming-Alfheim_Edition is based on the work of xeio87 - https://www.nexusmods.com/valheim/users/111762253");
             MassActionHotkey = Config.Bind("Hotkeys", nameof(MassActionHotkey), new KeyboardShortcut(KeyCode.LeftShift), "Mass activation hotkey for multi-pickup/multi-plant.");
             ControllerPickupHotkey = Config.Bind("Hotkeys", nameof(ControllerPickupHotkey), new KeyboardShortcut(KeyCode.JoystickButton4), "Mass activation hotkey for multi-pickup/multi-plant for controller.");
 
