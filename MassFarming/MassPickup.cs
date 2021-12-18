@@ -33,6 +33,13 @@ namespace MassFarming
             var interactible = go.GetComponentInParent<Interactable>();
             if (interactible is Pickable targetedPickable)
             {
+                if (!MassFarming.AllowedPickables.Contains(targetedPickable.m_itemPrefab.name))
+                {
+                    Debug.Log("MassFarming Alfheim:");
+                    Debug.Log(targetedPickable.m_itemPrefab.name);
+                    Debug.Log("Is not in the pickable list");
+                    return;
+                }
                 var interactMask = (int)m_interactMaskField.GetValue(__instance);
                 var colliders = Physics.OverlapSphere(go.transform.position, MassFarming.MassInteractRange.Value, interactMask);
                 
